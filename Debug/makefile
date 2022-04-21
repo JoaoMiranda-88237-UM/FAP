@@ -17,24 +17,12 @@ ORDERED_OBJS += \
 "./F2837xD_EPwm.obj" \
 "./F2837xD_GlobalVariableDefs.obj" \
 "./F2837xD_Gpio.obj" \
-"./F2837xD_I2C.obj" \
-"./F2837xD_Ipc.obj" \
-"./F2837xD_Ipc_Driver.obj" \
-"./F2837xD_Ipc_Driver_Lite.obj" \
-"./F2837xD_Ipc_Driver_Util.obj" \
 "./F2837xD_PieCtrl.obj" \
 "./F2837xD_PieVect.obj" \
-"./F2837xD_Sci.obj" \
-"./F2837xD_Spi.obj" \
 "./F2837xD_SysCtrl.obj" \
-"./F2837xD_sci_io.obj" \
-"./F2837xD_struct.obj" \
 "./F2837xD_usDelay.obj" \
-"./adc.obj" \
-"./gpio.obj" \
+"./Peripheral_Setup.obj" \
 "./main.obj" \
-"./pwm.obj" \
-"./timer.obj" \
 "../2837x_RAM_lnk_cpu1.cmd" \
 "C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/cmd/F2837xD_Headers_nonBIOS_cpu1.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -145,42 +133,42 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-FAP_project.out \
+FAP.out \
 
 EXE_OUTPUTS__QUOTED += \
-"FAP_project.out" \
+"FAP.out" \
 
 BIN_OUTPUTS += \
-FAP_project.hex \
+FAP.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"FAP_project.hex" \
+"FAP.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "FAP_project.out"
+	@$(MAKE) --no-print-directory -Onone "FAP.out"
 
 # Tool invocations
-FAP_project.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+FAP.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"FAP_project.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="FAP_project_linkInfo.xml" --rom_model -o "FAP_project.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"FAP.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="FAP_linkInfo.xml" --rom_model -o "FAP.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-FAP_project.hex: $(EXE_OUTPUTS)
+FAP.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo 'Invoking: C2000 Hex Utility'
-	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/hex2000" --diag_wrap=off -o "FAP_project.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/hex2000" --diag_wrap=off -o "FAP.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_I2C.obj" "F2837xD_Ipc.obj" "F2837xD_Ipc_Driver.obj" "F2837xD_Ipc_Driver_Lite.obj" "F2837xD_Ipc_Driver_Util.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_Sci.obj" "F2837xD_Spi.obj" "F2837xD_SysCtrl.obj" "F2837xD_sci_io.obj" "F2837xD_struct.obj" "F2837xD_usDelay.obj" "adc.obj" "gpio.obj" "main.obj" "pwm.obj" "timer.obj" 
-	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_I2C.d" "F2837xD_Ipc.d" "F2837xD_Ipc_Driver.d" "F2837xD_Ipc_Driver_Lite.d" "F2837xD_Ipc_Driver_Util.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_Sci.d" "F2837xD_Spi.d" "F2837xD_SysCtrl.d" "F2837xD_sci_io.d" "F2837xD_struct.d" "adc.d" "gpio.d" "main.d" "pwm.d" "timer.d" 
+	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "Peripheral_Setup.obj" "main.obj" 
+	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "Peripheral_Setup.d" "main.d" 
 	-$(RM) "F2837xD_CodeStartBranch.d" "F2837xD_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

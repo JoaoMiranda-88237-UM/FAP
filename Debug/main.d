@@ -1,7 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
-main.obj: ../gpio.h
+main.obj: ../Peripheral_Setup.h
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F28x_Project.h
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_Cla_typedefs.h
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_device.h
@@ -65,16 +65,13 @@ main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_SysCtrl_defines.h
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_Upp_defines.h
 main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_defaultisr.h
-main.obj: ../adc.h
-main.obj: ../timer.h
-main.obj: ../pwm.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/math.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/_defs.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/machine/_limits.h
 
 ../main.c:
 
-../gpio.h:
+../Peripheral_Setup.h:
 
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F28x_Project.h:
 
@@ -201,12 +198,6 @@ C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_Sy
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_Upp_defines.h:
 
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_defaultisr.h:
-
-../adc.h:
-
-../timer.h:
-
-../pwm.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/math.h:
 
