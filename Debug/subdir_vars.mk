@@ -23,8 +23,11 @@ C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Gpi
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieCtrl.c \
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieVect.c \
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_SysCtrl.c \
-../Peripheral_Setup.c \
-../main.c 
+../adc.c \
+../gpio.c \
+../main.c \
+../pwm.c \
+../timer.c 
 
 C_DEPS += \
 ./F2837xD_Adc.d \
@@ -36,8 +39,11 @@ C_DEPS += \
 ./F2837xD_PieCtrl.d \
 ./F2837xD_PieVect.d \
 ./F2837xD_SysCtrl.d \
-./Peripheral_Setup.d \
-./main.d 
+./adc.d \
+./gpio.d \
+./main.d \
+./pwm.d \
+./timer.d 
 
 OBJS += \
 ./F2837xD_Adc.obj \
@@ -51,8 +57,11 @@ OBJS += \
 ./F2837xD_PieVect.obj \
 ./F2837xD_SysCtrl.obj \
 ./F2837xD_usDelay.obj \
-./Peripheral_Setup.obj \
-./main.obj 
+./adc.obj \
+./gpio.obj \
+./main.obj \
+./pwm.obj \
+./timer.obj 
 
 ASM_DEPS += \
 ./F2837xD_CodeStartBranch.d \
@@ -70,8 +79,11 @@ OBJS__QUOTED += \
 "F2837xD_PieVect.obj" \
 "F2837xD_SysCtrl.obj" \
 "F2837xD_usDelay.obj" \
-"Peripheral_Setup.obj" \
-"main.obj" 
+"adc.obj" \
+"gpio.obj" \
+"main.obj" \
+"pwm.obj" \
+"timer.obj" 
 
 C_DEPS__QUOTED += \
 "F2837xD_Adc.d" \
@@ -83,8 +95,11 @@ C_DEPS__QUOTED += \
 "F2837xD_PieCtrl.d" \
 "F2837xD_PieVect.d" \
 "F2837xD_SysCtrl.d" \
-"Peripheral_Setup.d" \
-"main.d" 
+"adc.d" \
+"gpio.d" \
+"main.d" \
+"pwm.d" \
+"timer.d" 
 
 ASM_DEPS__QUOTED += \
 "F2837xD_CodeStartBranch.d" \
@@ -100,8 +115,11 @@ C_SRCS__QUOTED += \
 "C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieCtrl.c" \
 "C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieVect.c" \
 "C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_SysCtrl.c" \
-"../Peripheral_Setup.c" \
-"../main.c" 
+"../adc.c" \
+"../gpio.c" \
+"../main.c" \
+"../pwm.c" \
+"../timer.c" 
 
 ASM_SRCS__QUOTED += \
 "C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_CodeStartBranch.asm" \
