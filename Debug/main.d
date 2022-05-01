@@ -68,6 +68,7 @@ main.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/
 main.obj: ../adc.h
 main.obj: ../timer.h
 main.obj: ../pwm.h
+main.obj: ../dac.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/math.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/_defs.h
 main.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/machine/_limits.h
@@ -207,6 +208,8 @@ C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_de
 ../timer.h:
 
 ../pwm.h:
+
+../dac.h:
 
 C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/math.h:
 

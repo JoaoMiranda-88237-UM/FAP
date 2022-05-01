@@ -1,6 +1,6 @@
 # FIXED
 
-F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c
+F2837xD_GlobalVariableDefs.obj: ../F2837xD_GlobalVariableDefs.c
 F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_device.h
 F2837xD_GlobalVariableDefs.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/assert.h
 F2837xD_GlobalVariableDefs.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/_ti_config.h
@@ -48,7 +48,7 @@ F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F
 F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_xbar.h
 F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_xint.h
 
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c:
+../F2837xD_GlobalVariableDefs.c:
 
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_device.h:
 

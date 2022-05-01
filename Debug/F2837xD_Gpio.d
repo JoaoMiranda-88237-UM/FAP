@@ -1,6 +1,6 @@
 # FIXED
 
-F2837xD_Gpio.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Gpio.c
+F2837xD_Gpio.obj: ../F2837xD_Gpio.c
 F2837xD_Gpio.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_device.h
 F2837xD_Gpio.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/assert.h
 F2837xD_Gpio.obj: C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include/_ti_config.h
@@ -63,7 +63,7 @@ F2837xD_Gpio.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/
 F2837xD_Gpio.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_Upp_defines.h
 F2837xD_Gpio.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/include/F2837xD_defaultisr.h
 
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Gpio.c:
+../F2837xD_Gpio.c:
 
 C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/include/F2837xD_device.h:
 

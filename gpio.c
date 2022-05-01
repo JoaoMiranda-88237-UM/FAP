@@ -40,6 +40,12 @@ void Setup_GPIO(void)
     GpioCtrlRegs.GPBCSEL1.bit.GPIO34 = GPIO_MUX_CPU1;
     GpioCtrlRegs.GPACSEL4.bit.GPIO31 = GPIO_MUX_CPU1;
 
+    //GPI014
+
+    GpioCtrlRegs.GPAGMUX1.bit.GPIO14 = 0;
+    GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 0;
+    GpioCtrlRegs.GPAPUD.bit.GPIO14 = 1;
+    GpioCtrlRegs.GPADIR.bit.GPIO14 = 1;
 
     EDIS;
 }

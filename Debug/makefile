@@ -19,15 +19,17 @@ ORDERED_OBJS += \
 "./F2837xD_Gpio.obj" \
 "./F2837xD_PieCtrl.obj" \
 "./F2837xD_PieVect.obj" \
+"./F2837xD_Sci.obj" \
 "./F2837xD_SysCtrl.obj" \
 "./F2837xD_usDelay.obj" \
 "./adc.obj" \
+"./dac.obj" \
 "./gpio.obj" \
 "./main.obj" \
 "./pwm.obj" \
 "./timer.obj" \
-"../2837x_RAM_lnk_cpu1.cmd" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/cmd/F2837xD_Headers_nonBIOS_cpu1.cmd" \
+"../2837xD_RAM_lnk_cpu1.cmd" \
+"../F2837xD_Headers_nonBIOS_cpu1.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -156,7 +158,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 FAP.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"FAP.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="FAP_linkInfo.xml" --rom_model -o "FAP.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --fp_mode=strict --advice:performance=all --define=_LAUNCHXL_F28379D --define=CPU1 --define=CPU_FRQ_200MHZ -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"FAP.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib" -i"C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="FAP_linkInfo.xml" --rom_model -o "FAP.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -170,8 +172,8 @@ FAP.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "adc.obj" "gpio.obj" "main.obj" "pwm.obj" "timer.obj" 
-	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "adc.d" "gpio.d" "main.d" "pwm.d" "timer.d" 
+	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_Sci.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "adc.obj" "dac.obj" "gpio.obj" "main.obj" "pwm.obj" "timer.obj" 
+	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_Sci.d" "F2837xD_SysCtrl.d" "adc.d" "dac.d" "gpio.d" "main.d" "pwm.d" "timer.d" 
 	-$(RM) "F2837xD_CodeStartBranch.d" "F2837xD_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

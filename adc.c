@@ -15,7 +15,7 @@
  * [Inicializar os 3 ADCs:
  *          - SOC0 -> ADCIN14 (23) Vgrid
  *          - SOC1 -> ADCIN3  (26) Iload
- *          - SOC2 -> ADCIN0  (30) Ifap
+ *          - SOC2 -> ADCIN15 (63) Ifap
  * ##########################################*/
 void Setup_ADC() {
     Uint16 acqps;
@@ -33,18 +33,19 @@ void Setup_ADC() {
     AdcaRegs.ADCCTL1.bit.ADCPWDNZ = 1;          // power up the ADC
     DELAY_US(1000);                             // delay for 1ms to allow ADC time to power up
 
-    AdcaRegs.ADCSOC0CTL.bit.CHSEL = 14;          //SOC0 will convert pin ADCIN14 (23) Va
+    AdcaRegs.ADCSOC0CTL.bit.CHSEL = 14;          //SOC0 will convert pin ADCIN14 (23) Vgrid
     AdcaRegs.ADCSOC0CTL.bit.ACQPS = acqps;      //sample window is 15 SYSCLK cycles
-    AdcaRegs.ADCSOC0CTL.bit.TRIGSEL = TRIG_SEL_ePWM1_SOCA;  //trigger on ePWM7 SOCA
+    AdcaRegs.ADCSOC0CTL.bit.TRIGSEL = TRIG_SEL_eTIMER0_SOCA;  //trigger on ePWM7 SOCA
 
-    AdcaRegs.ADCSOC1CTL.bit.CHSEL = 3;          //SOC1 will convert pin ADCINA3 (26) Vb
+    AdcaRegs.ADCSOC1CTL.bit.CHSEL = 3;          //SOC1 will convert pin ADCINA3 (26) Iload
     AdcaRegs.ADCSOC1CTL.bit.ACQPS = acqps;
-    AdcaRegs.ADCSOC1CTL.bit.TRIGSEL = TRIG_SEL_ePWM1_SOCA;
+    AdcaRegs.ADCSOC1CTL.bit.TRIGSEL = TRIG_SEL_eTIMER0_SOCA;
 
-    AdcaRegs.ADCSOC2CTL.bit.CHSEL = 0;          //SOC2 will convert pin ADCINA0 (30) Vc
+    AdcaRegs.ADCSOC2CTL.bit.CHSEL = 15;          //SOC2 will convert pin ADCINA0 (63) Ifap
     AdcaRegs.ADCSOC2CTL.bit.ACQPS = acqps;
-    AdcaRegs.ADCSOC2CTL.bit.TRIGSEL = TRIG_SEL_ePWM1_SOCA;
+    AdcaRegs.ADCSOC2CTL.bit.TRIGSEL = TRIG_SEL_eTIMER0_SOCA;
 
+    AdcaRegs.ADCINTSEL1N2.bit.INT1CONT = 0; // disable ADCINT1 Continuous mode
     AdcaRegs.ADCINTSEL1N2.bit.INT1SEL = 0x02;       // end of SOC2 will set INT1 flag
     AdcaRegs.ADCINTSEL1N2.bit.INT1E = 1;            // enable INT1 flag
     AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1;          // make sure INT1 flag is cleared
